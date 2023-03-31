@@ -10,5 +10,5 @@ then npm start command to run  .
 
 ## Take A look :
 This Project is hosted live at [Link](https://placement-cell-n141.onrender.com)
-Git Hub [Link](https://github.com/developeramit14jan/PlacementCell)
+Git Hub [Link]https://github.com/Debajyoti-Shit/Placement-Cell)
 
