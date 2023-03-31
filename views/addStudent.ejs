@@ -1,0 +1,29 @@
+<!-- include the header partial -->
+<%- include('_header') %>
+    <!-- include the CSS file for the add student page -->
+    <link rel="stylesheet" href="/css/addStudent.css">
+
+    <section>
+        <h1>Add New Student </h1>
+        <!-- create a form to add a new student -->
+        <form action="/employee/addstudent" method="POST">
+            <input id="batch" type="text" name="batch" placeholder="Batch Details" required><br><br>
+            <input id="name" type="text" name="name" placeholder="Student Name" required><br><br>
+            <input id="email" type="text" name="email" placeholder="example@email.com" required><br><br>
+            <input id="college" type="text" name="college" placeholder="college" required><br><br>
+
+            <!-- create a dropdown to select the placement status -->
+
+            <select id="status" class="form-select" name="status" required name="placement Status">
+                <option selected value="Not_placed">Not placed</option>
+                <option value="Placed">Placed</option>
+            </select><br><br>
+
+
+            <input id="DSA_FinalScore" type="text" name="DSA_FinalScore" placeholder="DSA Score" required><br><br>
+            <input id="WebD_FinalScore" type="text" name="WebD_FinalScore" placeholder="WebD Score" required><br><br>
+            <input id="React_FinalScore" type="text" name="React_FinalScore" placeholder="React Score" required><br><br>
+            <button>Submit</button>
+
+        </form>
+    </section>

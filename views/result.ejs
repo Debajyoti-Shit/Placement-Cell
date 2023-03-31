@@ -1,0 +1,60 @@
+<!-- include the header partial -->
+<%- include('_header') %>
+    <!-- link to custom CSS file -->
+    <link rel="stylesheet" href="/css/result.css">
+
+
+    <section>
+        <!-- main heading for the section -->
+        <h1>Result Update:</h1>
+        <div>
+            <table>
+                <tr>
+                    <th>CompanyName</th>
+                    <th>StudentName</th>
+                    <th>Email</th>
+                    <th>Result</th>
+                </tr>
+                <tr>
+                    <!-- loop through the array of students -->
+                    <% for(var i=0 ; i<companyResult.students.length ; i++ ) { %>
+                        <td><!-- display the name of the company -->
+                            <%= companyResult.companyName %>
+                        </td>
+                        <td><!-- display the name of the student -->
+                            <%= companyResult.students[i].name %>
+                        </td>
+                        <td><!-- display the email of the student -->
+                            <%= companyResult.students[i].email %>
+                        </td>
+                        <td>
+                            <!-- check if the student has updated their result or not -->
+                            <% if(companyResult.result.indexOf(companyResult.students[i].id)==-1) { %>
+                                <form action="/result/update" method="POST">
+
+                                    <select id="result" class="form-select inline" type="text" name="result" required
+                                        placeholder="Update Result">
+                                        <!-- default option -->
+                                        <option selected value="Didnot Attemp">Update Result</option>
+                                        <option value="Didnot Attemp">Didn't Attemp</option>
+                                        <option value="On Hold">On Hold</option>
+                                        <option value="PASS">PASS</option>
+                                        <option value="FAIL">FAIL</option>
+                                    </select>
+                                    <!-- hidden input to store the interview ID -->
+                                    <input type="hidden" name="interviewId" value="<%= companyResult.id %>">
+                                    <!-- hidden input to store the student ID -->
+                                    <input type="hidden" name="studentId" value="<%= companyResult.students[i].id %>">
+                                    <button class="inline">Update</button>
+                                </form>
+                                <%}else{ %>
+                                    <!-- display a message if the student has already updated their result -->
+                                    <button>Done !</button>
+                                    <%}%>
+
+                        </td>
+                </tr>
+                <% } %>
+            </table>
+        </div>
+    </section>

@@ -1,0 +1,66 @@
+<!-- Include Employee Dashboard CSS -->
+<link rel="stylesheet" href="/css/employeeDashboard.css">
+
+<!-- Include the header partial -->
+<%- include('_header') %>
+    <section>
+        <div>
+            <h1>List Of All Student : </h1>
+            <!-- Create a table to display student details -->
+            <table>
+                <tr>
+                    <th>SNo .</th>
+                    <th>Batch</th>
+                    <th>StudentName</th>
+                    <th>Email</th>
+                    <th>College</th>
+                    <th>Status</th>
+                    <th>DSA Score</th>
+                    <th>WebD Score</th>
+                    <th>React Score</th>
+                    <th>Action</th>
+                </tr>
+
+                <!-- Loop through each student and display their details -->
+                <% for (var i=0 ; i< studentList.length ; i++ ){ %>
+                    <tr>
+                        <td>
+                            <%= i + 1 %>
+                        </td>
+                        <td>
+                            <%= studentList[i].batch %>
+                        </td>
+                        <td>
+                            <%= studentList[i].name %>
+                        </td>
+                        <td>
+                            <%= studentList[i].email %>
+                        </td>
+                        <td>
+                            <%= studentList[i].college %>
+                        </td>
+                        <td>
+                            <%= studentList[i].status %>
+                        </td>
+                        <td>
+                            <%= studentList[i].DSA_FinalScore %>
+                        </td>
+                        <td>
+                            <%= studentList[i].WebD_FinalScore %>
+                        </td>
+                        <td>
+                            <%= studentList[i].React_FinalScore %>
+                        </td>
+                        <td>
+                            <!-- Add a link to allocate interview for the student -->
+                            <button>
+                                <a id="linkToAllocateInterview" href="/student/<%= studentList[i].id %>">Interview
+                                    Allocate</a>
+                            </button>
+                        </td>
+                        <% } %>
+                    </tr>
+            </table>
+
+        </div>
+    </section>

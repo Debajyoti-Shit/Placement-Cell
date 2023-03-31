@@ -1,0 +1,19 @@
+<!-- Including the header partial view -->
+<%- include('_header') %>
+    <!-- Linking the interview form's CSS stylesheet -->
+    <link rel="stylesheet" href="/css/formForInterview.css">
+
+
+    <section>
+        <h1>Allocate Student To An Interview</h1>
+        <!-- Form to allocate student to interview -->
+        <form action="/student/interview_allocation" method="POST">
+            <input id="companyName" type="text" name="companyName" placeholder="Enter Company Name" required><br><br>
+            <input id="date" type="date" name="date" placeholder="Enter Date Of Interview" required><br><br>
+
+            <!-- Hidden input to send student ID along with form -->
+            <input id="studentID" type="hidden" name="studentID" value=<%=id %>>
+            <button id="button">Submit</button>
+
+        </form>
+    </section>

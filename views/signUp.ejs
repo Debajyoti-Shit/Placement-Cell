@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="/css/signUp.css" />
+<nav>
+  <a  href="#">Placement Cell</a>
+  <a class="pos-end" href="/">Sign In</a>
+</nav>
+<section>
+  <h1>Sign Up To Account</h1>
+  <!-- The Sign Up form with input fields for first name, last name, email, password, and a submit button -->
+  <form id="form" action="/create_session" method="POST">
+    <!-- If there is an error in the first name field, display a small message -->
+    <% if(firstNameError !=null){ %>
+    <small><%- firstNameError %></small><br />
+    <%}%>
+    <input
+      id="firstname"
+      type="text"
+      name="firstname"
+      placeholder="Enter First Name"
+    /><br />
+    <!-- If there is an error in the last name field, display a small message -->
+    <% if(lastNameError !=null){ %>
+    <small><%- lastNameError %></small><br />
+    <%}%>
+    <input
+      id="lastname"
+      type="text"
+      name="lastname"
+      placeholder="Enter Last Name"
+    /><br />
+    <!-- If there is an error in the email field, display a small message -->
+    <% if(emailError !=null){ %>
+    <small><%- emailError %></small><br />
+    <%}%>
+    <input
+      id="email"
+      type="text"
+      name="email"
+      placeholder="Enter The Email"
+    /><br />
+    <!-- If there is an error in the password field, display a small message -->
+    <% if(passwordError !=null){ %>
+    <small><%- passwordError %></small><br />
+    <%}%>
+    <!-- The password field with a placeholder and icons for check and exclamation marks -->
+    <input
+      id="password"
+      type="password"
+      name="password"
+      placeholder="Enter The Password"
+    /><i class="fa-solid fa-circle-check"></i>&nbsp;<i
+      class="fa-solid fa-circle-exclamation"
+    ></i
+    ><br /><br />
+    <button id="button" type="submit">Submit</button>
+  </form>
+</section>

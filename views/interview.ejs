@@ -1,0 +1,31 @@
+<!-- Including the header partial view -->
+<%- include('_header') %>
+    <!-- This is a link to an external stylesheet -->
+    <link rel="stylesheet" href="/css/interview.css">
+
+    <section>
+        <h1>Company List:</h1>
+        <div>
+            <table>
+                <tr><!-- These are table headers -->
+                    <th>SNO.</th>
+                    <th>CompanyName</th>
+                    <th>Action</th>
+                </tr>
+                <% for(var i=0 ; i<interview_list.length ; i++) { %>
+                    <tr>
+                        <td>
+                            <!-- This displays the serial number of the company -->
+                            <%= i + 1 %>
+                        </td>
+                        <td>
+                            <!-- This displays the name of the company -->
+                            <%= interview_list[i].companyName %>
+                        </td>
+                        <!-- This is a button that links to the mark result page for the company -->
+                        <td><button><a href="/result/<%= interview_list[i].id %>">Mark Result</a></button></td>
+                    </tr>
+                    <% } %>
+            </table>
+        </div>
+    </section>
